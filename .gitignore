@@ -19,6 +19,8 @@ data/*.csv
 data/*.json
 data/*.txt
 data/*.tsv
+data/raw/
+data/processed/
 
 models/*.pkl
 models/*.joblib
