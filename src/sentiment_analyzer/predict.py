@@ -24,7 +24,11 @@ def predict_sentiment(text: str) -> dict:
     cleaned_text = text.strip() if isinstance(text, str) else ""
 
     if not cleaned_text:
-        raise ValueError("Please enter some text to predict sentiment.")
+        return {
+            "label": "Unknown",
+            "confidence": 0.0,
+            "error": "Input text is empty.",
+        }
 
     model = load_model()
     prediction = model.predict([cleaned_text])[0]
